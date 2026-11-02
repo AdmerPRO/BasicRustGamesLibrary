@@ -36,6 +36,11 @@ BasicRustGamesLibrary/
 
 Each game is stored in its own directory and should include everything needed to build and run it.
 
+## Available Games
+
+- `console/tic_tac_toe` – two-player tic-tac-toe in the terminal.
+- `console/guess_number` – guess a randomly selected number from 1 to 100.
+
 ## Requirements
 
 - [Rust](https://www.rust-lang.org/tools/install)
@@ -43,19 +48,27 @@ Each game is stored in its own directory and should include everything needed to
 
 ## Running a Game
 
-Navigate to the directory of the game you want to play:
+The repository is a Cargo workspace, so you can check or build all games from its root:
 
 ```bash
-cd console/example-game
+cargo check --workspace
+cargo build --workspace --release
 ```
 
-Build and run it:
+Run a selected game from the repository root:
+
+```bash
+cargo run -p tic_tac_toe
+cargo run -p guess_number
+```
+
+Or enter an individual game directory and run it there:
 
 ```bash
 cargo run
 ```
 
-For an optimized release build:
+For an optimized release run:
 
 ```bash
 cargo run --release
